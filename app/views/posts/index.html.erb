@@ -1,27 +1,15 @@
-<h1>Listing posts</h1>
+<div class="container">
+  <div class="hero-unit">
+    <div class="page-header">
+    <h4>Listing posts <small>
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Create new post
+      </button>
+    </h4>
+  </div>
+  
+  <%= render "posts"%>
+  
+</div>
+<%= render "form"%>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>

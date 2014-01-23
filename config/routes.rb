@@ -1,14 +1,15 @@
 Blog::Application.routes.draw do
   devise_for :users
 
+  #devise_for :users
+
   resources :posts
 
-
   get "home/index"
-root :to => "home#index"
-resources :posts do
-  resources :comments
-end
+  root :to => "home#index"
+  resources :posts do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
